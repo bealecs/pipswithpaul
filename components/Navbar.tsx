@@ -51,12 +51,14 @@ import {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+            
             <Text
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
               Logo
             </Text>
+            
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
@@ -252,17 +254,21 @@ import {
   
   const NAV_ITEMS: Array<NavItem> = [
     {
+      label: 'Home',
+      href: '/',
+    },
+    {
       label: 'Plans & Pricing',
       children: [
         {
           label: 'Free Plans',
           subLabel: 'Follow along with our free courses',
-          href: '#',
+          href: '/pricing',
         },
         {
           label: 'Paid partnerships',
           subLabel: 'Unlock 1-on-1 sessions and exclusive video content',
-          href: '#',
+          href: '/pricing',
         },
       ],
     },
@@ -283,23 +289,14 @@ import {
     },
     {
       label: 'About',
-      href: '#',
+      href: '/about',
     },
     {
       label: 'News & Updates',
-      href: '#',
+      href: '/newsletter',
     },
     {
         label: 'Contact',
-        children: [
-            {
-              label: 'Phone',
-              subLabel: 'Call us @ +1(***)***-****',
-            },
-            {
-                label: 'Email',
-                subLabel: 'Send us an email @ *********@gmail.com',
-              },
-        ],
+        href: '/contact',
       },
   ];
