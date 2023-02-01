@@ -259,6 +259,7 @@ import {
     },
     {
       label: 'Plans & Pricing',
+      href: '/pricing',
       children: [
         {
           label: 'Free Plans',
