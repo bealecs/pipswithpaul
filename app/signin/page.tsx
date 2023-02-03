@@ -1,4 +1,6 @@
 "use client"
+import { auth } from '@/firebase/firebase';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import {
     Flex,
     Box,
@@ -13,8 +15,29 @@ import {
     Text,
     useColorModeValue,
   } from '@chakra-ui/react';
-  
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useRouter } from 'next/navigation';
+
+  const provider = new GoogleAuthProvider();
+  const login = async() => {
+    const result = await signInWithPopup(auth, provider);
+    
+  }
+
   export default function SignInPage() {
+
+    const [user, loading] = useAuthState(auth);
+    const router = useRouter();
+
+    if (loading) {
+      return <div>Loading...</div>
+    } else if(user) {
+      router.push("/");
+      return <div>Loading...</div>
+    } else if (!user) {
+      router.push("/signin");
+    }
+
     return (
       <Flex
         minH={'100vh'}
@@ -25,7 +48,7 @@ import {
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Sign in to your account</Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
-              to enjoy all of our cool <Link color={'blue.400'}>features</Link> ✌️
+              to enjoy all of our cool <Link color={'green.400'}>features</Link> ✌️
             </Text>
           </Stack>
           <Box
@@ -48,17 +71,21 @@ import {
                   align={'start'}
                   justify={'space-between'}>
                   <Checkbox>Remember me</Checkbox>
-                  <Link color={'blue.400'}>Forgot password?</Link>
+                  <Link color={'green.400'}>Forgot password?</Link>
                 </Stack>
                 <Button
-                  bg={'blue.400'}
+                  bg={'green.400'}
                   color={'white'}
                   _hover={{
-                    bg: 'blue.500',
+                    bg: 'green.500',
                   }}>
                   Sign in
                 </Button>
               </Stack>
+              <Button 
+                onClick={login}>
+                Sign in with Google
+              </Button>
             </Stack>
           </Box>
         </Stack>

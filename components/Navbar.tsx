@@ -21,9 +21,13 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+  import { auth } from '@/firebase/firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
   
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
+    const [user] = useAuthState(auth);
   
     return (
       <Box>
@@ -72,12 +76,15 @@ import {
             spacing={6}>
             <Button
               as={'a'}
-              fontSize={'sm'}
-              fontWeight={400}
-              variant={'link'}
               href='/signin'>
-              Sign In
+                Sign in
             </Button>
+            {user && <Button
+              onClick={() => auth.signOut()}
+              as={'a'}
+              href='/'>
+              Sign out
+            </Button>}
             <Button
                 as={"a"}
               display={{ base: 'none', md: 'inline-flex' }}
@@ -91,6 +98,7 @@ import {
               }}>
               Sign Up
             </Button>
+            
           </Stack>
         </Flex>
   
@@ -105,9 +113,11 @@ import {
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+    const [user] = useAuthState(auth);
   
     return (
       <Stack direction={'row'} spacing={4}>
+        {user && <strong><h1 style={{color: 'green'}}>Hi, {user.displayName}</h1></strong>}
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
