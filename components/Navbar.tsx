@@ -74,18 +74,18 @@ import { useAuthState } from 'react-firebase-hooks/auth';
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
-            <Button
+            {!user && <Button
               as={'a'}
               href='/signin'>
                 Sign in
-            </Button>
+            </Button>}
             {user && <Button
               onClick={() => auth.signOut()}
               as={'a'}
-              href='/'>
+              href='/signin'>
               Sign out
             </Button>}
-            <Button
+            {!user && <Button
                 as={"a"}
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
@@ -97,7 +97,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
                 bg: 'green.300',
               }}>
               Sign Up
-            </Button>
+            </Button>}
             
           </Stack>
         </Flex>
