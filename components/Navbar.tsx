@@ -56,7 +56,12 @@ import { useAuthState } from 'react-firebase-hooks/auth';
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          {user && <strong><h4 style={{fontSize: '10px', color: 'green'}}>Hi, {user.email}</h4></strong>}
+          <Text
+              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+              fontFamily={'heading'}
+              color={useColorModeValue('gray.800', 'white')}>
+              Logo
+            </Text>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
@@ -110,7 +115,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
   
     return (
       <Stack direction={'row'} spacing={4}>
-        {user && <strong><h1 style={{color: 'green'}}>Hi, {user.email}</h1></strong>}
+        {user && <h1 style={{color: 'green'}}>Hi, {user.email}</h1>}
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -263,18 +268,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
     {
       label: 'Plans & Pricing',
       href: '/pricing',
-      children: [
-        {
-          label: 'Free Plans',
-          subLabel: 'Follow along with our free courses',
-          href: '/pricing',
-        },
-        {
-          label: 'Paid partnerships',
-          subLabel: 'Unlock 1-on-1 sessions and exclusive video content',
-          href: '/pricing',
-        },
-      ],
     },
     {
       label: 'Courses',

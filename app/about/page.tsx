@@ -1,8 +1,11 @@
 "use client"
+import Features from '@/components/Features';
 import { Avatar, Box, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 
 export default function About() {
   return (
+    <>
+    <Features />
     <Stack
       bg={useColorModeValue('gray.50', 'gray.800')}
       py={16}
@@ -34,5 +37,6 @@ export default function About() {
         </Text>
       </Box>
     </Stack>
+    </>
   );
 }

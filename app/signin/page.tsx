@@ -18,15 +18,14 @@ import {
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-
-  
-  // const [user, setUser] = useState({});
-
   
   const provider = new GoogleAuthProvider();
   const loginWithGoogle = async () => {
-    const result = await signInWithPopup(auth, provider);
-    
+    try {
+      const result = await signInWithPopup(auth, provider);
+    } catch (error) {
+      alert(error);
+    }
   }
   export default function SignInPage() {
     
@@ -34,6 +33,7 @@ import { useState } from 'react';
     const [password, setPassword] = useState("");
     const [user, loading, error] = useAuthState(auth);
     const router = useRouter();
+    
 
     const loginWithCredientials = async () => {
       try {
