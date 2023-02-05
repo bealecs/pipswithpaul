@@ -117,7 +117,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
   
     return (
       <Stack direction={'row'} spacing={4}>
-        {user && <strong><h1 style={{color: 'green'}}>Hi, {user.displayName}</h1></strong>}
+        {user && <strong><h1 style={{color: 'green'}}>Hi, {user.email}</h1></strong>}
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>

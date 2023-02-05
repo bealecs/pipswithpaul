@@ -1,6 +1,6 @@
 "use client"
 import { auth } from '@/firebase/firebase';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import {
     Flex,
     Box,
@@ -17,29 +17,47 @@ import {
   } from '@chakra-ui/react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
+  
+  // const [user, setUser] = useState({});
+
+  
   const provider = new GoogleAuthProvider();
-  const login = async() => {
+  const loginWithGoogle = async () => {
     const result = await signInWithPopup(auth, provider);
     
   }
-
   export default function SignInPage() {
-
+    
+    const [login, setLogin] = useState("")
+    const [password, setPassword] = useState("");
     const [user, loading, error] = useAuthState(auth);
     const router = useRouter();
 
-    if (loading) {
-      return <div>Loading...</div>
-    } else if(user) {
-      router.push("/");
-      return <div>Loading...</div>
-    } else if(error) {
-      router.push("/");
-      alert("There was an error processing your request");
-    } else if (!user) {
-        router.push("/signin");
+    const loginWithCredientials = async () => {
+      try {
+        const user = await signInWithEmailAndPassword(
+          auth,
+          login,
+          password
+        );
+        if (loading) {
+          return <div>Loading...</div>
+        } else if(user) {
+          router.push("/");
+          return <div>Loading...</div>
+        } else if (!user) {
+            router.push("/signin");
+        }
+        console.log(user);
+      } catch (error) {
+        console.log(error)
+      }
     }
+  
+    
+    
 
     return (
       <Flex
@@ -60,14 +78,20 @@ import { useRouter } from 'next/navigation';
             boxShadow={'lg'}
             p={8}>
             <Stack spacing={4}>
+              
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input onChange={(e) => {
+                  setLogin(e.target.value)
+                }} id="email" type="email" required/>
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password" />
+                <Input onChange={(e) => {
+                  setPassword(e.target.value)
+                }} id="password" type="password" required minLength={8} />
               </FormControl>
+              
               <Stack spacing={10}>
                 <Stack
                   direction={{ base: 'column', sm: 'row' }}
@@ -81,12 +105,13 @@ import { useRouter } from 'next/navigation';
                   color={'white'}
                   _hover={{
                     bg: 'green.500',
-                  }}>
+                  }}
+                  onClick={loginWithCredientials}>
                   Sign in
                 </Button>
               </Stack>
               <Button 
-                onClick={login}>
+                onClick={loginWithGoogle}>
                 Sign in with Google
               </Button>
             </Stack>
