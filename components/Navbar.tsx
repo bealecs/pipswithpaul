@@ -45,6 +45,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: -2 }}
             display={{ base: 'flex', md: 'none' }}>
+              
             <IconButton
               onClick={onToggle}
               icon={
@@ -55,15 +56,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            
-            <Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-              fontFamily={'heading'}
-              color={useColorModeValue('gray.800', 'white')}>
-              Logo
-            </Text>
-            
-  
+          {user && <strong><h4 style={{fontSize: '10px', color: 'green'}}>Hi, {user.email}</h4></strong>}
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
