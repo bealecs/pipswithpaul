@@ -1,4 +1,5 @@
 "use client"
+import Footer from '@/components/Footer';
 import {
     Box,
     Button,
@@ -73,7 +74,7 @@ import Navbar from '../../components/Navbar';
   };
   const Pricing = () => {
     return (
-        
+        <>
       <Box py={6} px={5}>
         <Stack spacing={4} width={'100%'} direction={'column'}>
           <Stack
@@ -124,7 +125,8 @@ import Navbar from '../../components/Navbar';
           <PackageTier title={'Lorem Elite'} typePlan="$100.00" options={options} />
         </Stack>
       </Box>
-      
+      <Footer />
+      </>
     );
   };
   

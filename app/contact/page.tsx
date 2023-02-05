@@ -1,4 +1,5 @@
 "use client"
+import Footer from '@/components/Footer';
 import {
     Box,
     Button,
@@ -38,6 +39,7 @@ import {
     const { hasCopied, onCopy } = useClipboard('pipswithpaul@gmail.com');
   
     return (
+      <>
       <Flex
         bg={useColorModeValue('green.100', 'gray.900')}
         align="center"
@@ -62,7 +64,7 @@ import {
               </Heading>
   
               <Stack
-                spacing={{ base: 4, md: 8, lg: 20 }}
+                spacing={{ base: 3, md: 8, lg: 20 }}
                 direction={{ base: 'column', md: 'row' }}>
                 <Stack
                   align="center"
@@ -86,21 +88,6 @@ import {
                       isRound
                     />
                   </Tooltip>
-  
-                  <Link href="#">
-                    <IconButton
-                      aria-label="github"
-                      variant="ghost"
-                      size="lg"
-                      fontSize="3xl"
-                      icon={<BsGithub />}
-                      _hover={{
-                        bg: 'green.500',
-                        color: useColorModeValue('white', 'gray.700'),
-                      }}
-                      isRound
-                    />
-                  </Link>
   
                   <Link href="#">
                     <IconButton
@@ -188,5 +175,7 @@ import {
           </Box>
         </Box>
       </Flex>
+      <Footer />
+      </>
     );
   }

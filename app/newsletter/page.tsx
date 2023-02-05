@@ -10,9 +10,11 @@ import {
     useColorModeValue,
     createIcon,
   } from '@chakra-ui/react';
+  import Footer from '@/components/Footer';
   
   export default function Newsletter() {
     return (
+      <>
       <Flex
         minH={'100vh'}
         align={'center'}
@@ -63,6 +65,8 @@ import {
           </Stack>
         </Stack>
       </Flex>
+      <Footer />
+      </>
     );
   }
   

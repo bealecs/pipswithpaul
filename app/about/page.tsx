@@ -1,5 +1,6 @@
 "use client"
 import Features from '@/components/Features';
+import Footer from '@/components/Footer';
 import { Avatar, Box, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 
 export default function About() {
@@ -37,6 +38,7 @@ export default function About() {
         </Text>
       </Box>
     </Stack>
+    <Footer />
     </>
   );
 }

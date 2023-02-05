@@ -18,6 +18,7 @@ import {
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import Footer from '@/components/Footer';
   
   const provider = new GoogleAuthProvider();
   const loginWithGoogle = async () => {
@@ -53,6 +54,7 @@ import { useState } from 'react';
     
 
     return (
+      <>
       <Flex
         minH={'100vh'}
         align={'center'}
@@ -111,5 +113,7 @@ import { useState } from 'react';
           </Box>
         </Stack>
       </Flex>
+      <Footer />
+      </>
     );
   }
