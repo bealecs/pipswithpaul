@@ -42,15 +42,8 @@ import { useState } from 'react';
           login,
           password
         );
-        if (loading) {
-          return <div>Loading...</div>
-        } else if(user) {
-          router.push("/");
-          return <div>Loading...</div>
-        } else if (!user) {
-            router.push("/signin");
-        }
         console.log(user);
+        router.push("/");
       } catch (error) {
         console.log(error)
       }
