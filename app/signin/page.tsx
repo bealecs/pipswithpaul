@@ -26,7 +26,7 @@ import { useRouter } from 'next/navigation';
 
   export default function SignInPage() {
 
-    const [user, loading] = useAuthState(auth);
+    const [user, loading, error] = useAuthState(auth);
     const router = useRouter();
 
     if (loading) {
@@ -34,8 +34,11 @@ import { useRouter } from 'next/navigation';
     } else if(user) {
       router.push("/");
       return <div>Loading...</div>
+    } else if(error) {
+      router.push("/");
+      alert("There was an error processing your request");
     } else if (!user) {
-      router.push("/signin");
+        router.push("/signin");
     }
 
     return (
