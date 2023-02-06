@@ -28,7 +28,7 @@ export default function Dashboard() {
         bg="white"
         border={'1px'}
         borderColor="black"
-        boxShadow={useColorModeValue('6px 6px 0 black', '6px 6px 0 cyan')}>
+        boxShadow={useColorModeValue('6px 6px 0 green', '6px 6px 0 cyan')}>
         <Box h={'200px'} borderBottom={'1px'} borderColor="black">
           <Img
             src={
@@ -43,22 +43,21 @@ export default function Dashboard() {
         </Box>
         <Box p={4}>
           <Box
-            bg="black"
+            bg="green"
             display={'inline-block'}
             px={2}
             py={1}
             color="white"
             mb={2}>
             <Text fontSize={'xs'} fontWeight="medium">
-              React
+              Easy
             </Text>
           </Box>
           <Heading color={'black'} fontSize={'2xl'} noOfLines={1}>
-            React v18.0
+            Beginner Course
           </Heading>
-          <Text color={'gray.500'} noOfLines={2}>
-            In this post, we will give an overview of what is new in React 18,
-            and what it means for the future.
+          <Text color={'gray.500'} noOfLines={3}>
+          In this course, we will cover the basics and get comfortable using MT4 decoy accounts.
           </Text>
         </Box>
         <HStack borderTop={'1px'} color="black">
@@ -70,24 +69,11 @@ export default function Dashboard() {
             cursor={'pointer'}
             w="full">
             <Text fontSize={'md'} fontWeight={'semibold'}>
-              View more
+              Go to Course Work
             </Text>
             <BsArrowUpRight />
           </Flex>
-          <Flex
-            p={4}
-            alignItems="center"
-            justifyContent={'space-between'}
-            roundedBottom={'sm'}
-            borderLeft={'1px'}
-            cursor="pointer"
-            onClick={() => setLiked(!liked)}>
-            {liked ? (
-              <BsHeartFill fill="red" fontSize={'24px'} />
-            ) : (
-              <BsHeart fontSize={'24px'} />
-            )}
-          </Flex>
+          
         </HStack>
       </Box>
     </Center>
@@ -103,7 +89,7 @@ export default function Dashboard() {
         bg="white"
         border={'1px'}
         borderColor="black"
-        boxShadow={useColorModeValue('6px 6px 0 black', '6px 6px 0 cyan')}>
+        boxShadow={useColorModeValue('6px 6px 0 green', '6px 6px 0 cyan')}>
         <Box h={'200px'} borderBottom={'1px'} borderColor="black">
           <Img
             src={
@@ -118,22 +104,21 @@ export default function Dashboard() {
         </Box>
         <Box p={4}>
           <Box
-            bg="black"
+            bg="green"
             display={'inline-block'}
             px={2}
             py={1}
             color="white"
             mb={2}>
             <Text fontSize={'xs'} fontWeight="medium">
-              React
+              Medium
             </Text>
           </Box>
           <Heading color={'black'} fontSize={'2xl'} noOfLines={1}>
-            React v18.0
+            Intermediate Course
           </Heading>
-          <Text color={'gray.500'} noOfLines={2}>
-            In this post, we will give an overview of what is new in React 18,
-            and what it means for the future.
+          <Text color={'gray.500'} noOfLines={4}>
+            In this course, we will build on the fundamentals learned in the beginner course, and become confident making decisions on trades.
           </Text>
         </Box>
         <HStack borderTop={'1px'} color="black">
@@ -145,24 +130,11 @@ export default function Dashboard() {
             cursor={'pointer'}
             w="full">
             <Text fontSize={'md'} fontWeight={'semibold'}>
-              View more
+              Go to Course Work
             </Text>
             <BsArrowUpRight />
           </Flex>
-          <Flex
-            p={4}
-            alignItems="center"
-            justifyContent={'space-between'}
-            roundedBottom={'sm'}
-            borderLeft={'1px'}
-            cursor="pointer"
-            onClick={() => setLiked(!liked)}>
-            {liked ? (
-              <BsHeartFill fill="red" fontSize={'24px'} />
-            ) : (
-              <BsHeart fontSize={'24px'} />
-            )}
-          </Flex>
+          
         </HStack>
       </Box>
     </Center>
@@ -178,7 +150,7 @@ export default function Dashboard() {
         bg="white"
         border={'1px'}
         borderColor="black"
-        boxShadow={useColorModeValue('6px 6px 0 black', '6px 6px 0 cyan')}>
+        boxShadow={useColorModeValue('6px 6px 0 green', '6px 6px 0 cyan')}>
         <Box h={'200px'} borderBottom={'1px'} borderColor="black">
           <Img
             src={
@@ -193,22 +165,21 @@ export default function Dashboard() {
         </Box>
         <Box p={4}>
           <Box
-            bg="black"
+            bg="green"
             display={'inline-block'}
             px={2}
             py={1}
             color="white"
             mb={2}>
             <Text fontSize={'xs'} fontWeight="medium">
-              React
+              Hard
             </Text>
           </Box>
           <Heading color={'black'} fontSize={'2xl'} noOfLines={1}>
-            React v18.0
+            Advanced Course
           </Heading>
-          <Text color={'gray.500'} noOfLines={2}>
-            In this post, we will give an overview of what is new in React 18,
-            and what it means for the future.
+          <Text color={'gray.500'} noOfLines={3}>
+            In this course, you will be advanced enough to start trading in the real markets.
           </Text>
         </Box>
         <HStack borderTop={'1px'} color="black">
@@ -220,24 +191,11 @@ export default function Dashboard() {
             cursor={'pointer'}
             w="full">
             <Text fontSize={'md'} fontWeight={'semibold'}>
-              View more
+              Go to Course Work
             </Text>
             <BsArrowUpRight />
           </Flex>
-          <Flex
-            p={4}
-            alignItems="center"
-            justifyContent={'space-between'}
-            roundedBottom={'sm'}
-            borderLeft={'1px'}
-            cursor="pointer"
-            onClick={() => setLiked(!liked)}>
-            {liked ? (
-              <BsHeartFill fill="red" fontSize={'24px'} />
-            ) : (
-              <BsHeart fontSize={'24px'} />
-            )}
-          </Flex>
+          
         </HStack>
       </Box>
     </Center>
