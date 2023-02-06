@@ -23,6 +23,8 @@ import {
   } from '@chakra-ui/icons';
   import { auth } from '@/firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import logo from '../public/logo.jpg';
+import Image from 'next/image';
 
   
   export default function Navbar() {
@@ -56,13 +58,12 @@ import { useAuthState } from 'react-firebase-hooks/auth';
               aria-label={'Toggle Navigation'}
             />
           </Flex>
+          <Image
+            src={logo}
+            alt="Pips with Paul Logo"
+            width={100}
+          />
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-              fontFamily={'heading'}
-              color={useColorModeValue('gray.800', 'white')}>
-              Logo
-            </Text>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
