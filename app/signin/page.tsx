@@ -1,6 +1,6 @@
 "use client"
 import { auth } from '@/firebase/firebase';
-import { GoogleAuthProvider, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, reload, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import {
     Flex,
     Box,
@@ -45,7 +45,8 @@ import Footer from '@/components/Footer';
         console.log(user);
         router.push("/");
       } catch (error) {
-        console.log(error)
+        window.location.reload();
+        alert(error)
       }
     }
 
@@ -63,13 +64,13 @@ import Footer from '@/components/Footer';
               to enjoy all of our cool <Link color={'green.400'}>features</Link> ✌️
             </Text>
           </Stack>
+          
           <Box
             rounded={'lg'}
             bg={useColorModeValue('white', 'gray.700')}
             boxShadow={'lg'}
             p={8}>
             <Stack spacing={4}>
-              
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
                 <Input onChange={(e) => {
@@ -107,7 +108,9 @@ import Footer from '@/components/Footer';
               </Button>
             </Stack>
           </Box>
+          
         </Stack>
+        
       </Flex>
       <Footer />
       </>
