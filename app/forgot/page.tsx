@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '@/firebase/firebase';
-import { border } from '@chakra-ui/react';
 
 export default function forgot() {
 
