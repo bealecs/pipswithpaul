@@ -28,6 +28,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
     const [user] = useAuthState(auth);
+
   
     return (
       <Box>

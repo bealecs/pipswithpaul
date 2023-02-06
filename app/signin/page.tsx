@@ -1,6 +1,6 @@
 "use client"
 import { auth } from '@/firebase/firebase';
-import { GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import {
     Flex,
     Box,
@@ -33,8 +33,7 @@ import Footer from '@/components/Footer';
     const [login, setLogin] = useState("")
     const [password, setPassword] = useState("");
     const [user, loading, error] = useAuthState(auth);
-    const router = useRouter();
-    
+    const router = useRouter();    
 
     const loginWithCredientials = async () => {
       try {
@@ -49,9 +48,6 @@ import Footer from '@/components/Footer';
         console.log(error)
       }
     }
-  
-    
-    
 
     return (
       <>
@@ -93,7 +89,7 @@ import Footer from '@/components/Footer';
                   align={'start'}
                   justify={'space-between'}>
                   <Checkbox>Remember me</Checkbox>
-                  <Link color={'green.400'}>Forgot password?</Link>
+                  <Link onClick={() => router.push('/forgot')} color={'green.400'}>Forgot password?</Link>
                 </Stack>
                 <Button
                   bg={'green.400'}

@@ -27,11 +27,8 @@ import { useRouter } from 'next/navigation';
     const [showPassword, setShowPassword] = useState(false);
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
-    const [displayFirstName, setDisplayFirstName] = useState("");
-    const [displayLastName, setDisplayLastName] = useState("");
     const Router = useRouter();
-
-
+    
     const registerCredentials = async () => {
       try {
         const user = await createUserWithEmailAndPassword(
@@ -72,17 +69,13 @@ import { useRouter } from 'next/navigation';
                 <Box>
                   <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
-                    <Input onChange={(e) => {
-                      setDisplayFirstName(e.target.value);
-                    }} type="text" />
+                    <Input type="text" required minLength={2}/>
                   </FormControl>
                 </Box>
                 <Box>
                   <FormControl id="lastName">
                     <FormLabel>Last Name</FormLabel>
-                    <Input onChange={(e) => {
-                      setDisplayLastName(e.target.value);
-                    }} type="text" />
+                    <Input type="text" required minLength={2}/>
                   </FormControl>
                 </Box>
               </HStack>
