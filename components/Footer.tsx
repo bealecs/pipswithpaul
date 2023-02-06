@@ -90,6 +90,7 @@ import {
                 src={logo}
                 alt="Pips with Paul Logo"
                 width={95}
+                style={{borderRadius:'50px'}}
               />
               </Box>
               <Text fontSize={'sm'}>

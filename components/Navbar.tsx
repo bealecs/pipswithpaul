@@ -62,6 +62,7 @@ import Image from 'next/image';
             src={logo}
             alt="Pips with Paul Logo"
             width={100}
+            style={{borderRadius:'50px'}}
           />
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
