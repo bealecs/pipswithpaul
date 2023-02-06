@@ -14,7 +14,9 @@ import {
   import { ReactNode } from 'react';
   import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
   import { BiMailSend } from 'react-icons/bi';
-  
+  import Image from 'next/image';
+  import logo from '../public/logo.jpg';
+
   const Logo = (props: any) => {
     return (
       <svg
@@ -84,7 +86,11 @@ import {
             spacing={8}>
             <Stack spacing={6}>
               <Box>
-                <Logo color={useColorModeValue('gray.700', 'white')} />
+              <Image
+                src={logo}
+                alt="Pips with Paul Logo"
+                width={95}
+              />
               </Box>
               <Text fontSize={'sm'}>
                 © Pips with Paul
@@ -104,15 +110,14 @@ import {
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Company</ListHeader>
-              <Link href={'#'}>About us</Link>
+              <Link href={'/about'}>About us</Link>
               <Link href={'#'}>Blog</Link>
-              <Link href={'#'}>Contact us</Link>
-              <Link href={'#'}>Pricing</Link>
+              <Link href={'/contact'}>Contact us</Link>
+              <Link href={'/pricing'}>Pricing</Link>
               <Link href={'#'}>Testimonials</Link>
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Support</ListHeader>
-              <Link href={'#'}>Help Center</Link>
               <Link href={'#'}>Terms of Service</Link>
               <Link href={'#'}>Legal</Link>
               <Link href={'#'}>Privacy Policy</Link>

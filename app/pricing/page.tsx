@@ -15,10 +15,25 @@ import {
   import { FaCheckCircle } from 'react-icons/fa';
 import Navbar from '../../components/Navbar';
   
-  const options = [
-    { id: 1, desc: '1 lorem ipsum' },
-    { id: 2, desc: 'Lorem, ipsum dolor.' },
-    { id: 3, desc: 'Monthly Updates' },
+  const freeOptions = [
+    { id: 1, desc: 'Free starter videos' },
+    { id: 2, desc: 'Blog access' },
+    { id: 3, desc: '1 free promotional video' },
+  ];
+  const firstOptions = [
+    { id: 1, desc: 'Daily signals' },
+    { id: 2, desc: 'Access to Telegram chatroom' },
+    { id: 3, desc: 'Personalize 5 signal callouts' },
+  ];
+  const secondOptions = [
+    { id: 1, desc: 'Access to exclusive updates and features' },
+    { id: 2, desc: 'Video coursework to teach Forex trading' },
+    { id: 3, desc: '1 on 1 mentoring sessions weekly' },
+  ];
+  const thirdOptions = [
+    { id: 1, desc: 'Everything listed in above packages' },
+    { id: 2, desc: 'Unlimited video coursework to teach Forex trading' },
+    { id: 3, desc: '1 on 1 mentoring sessions twice a week' },
   ];
   interface PackageTierProps {
     title: string;
@@ -104,25 +119,23 @@ import Navbar from '../../components/Navbar';
                 md: '60%',
               }}>
               <Text textAlign={'center'}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                quod in iure vero. Facilis magnam, sed officiis commodi labore
-                odit.
+                At Pips with Paul, we try and meet everyone's needs. You can find the plan that is right for you while maintaining your budget!
               </Text>
             </Stack>
           </Stack>
           <Divider />
-          <PackageTier title={'Starter'} typePlan="Free" options={options} />
+          <PackageTier title={'Starter'} typePlan="Free" options={freeOptions} />
           <Divider />
           <PackageTier
             title={'Lorem Plus'}
             checked={true}
             typePlan="$32.00"
-            options={options}
+            options={firstOptions}
           />
           <Divider />
-          <PackageTier title={'Lorem Pro'} typePlan="$50.00" options={options} />
+          <PackageTier title={'Lorem Pro'} typePlan="$50.00" options={secondOptions} />
           <Divider />
-          <PackageTier title={'Lorem Elite'} typePlan="$100.00" options={options} />
+          <PackageTier title={'Lorem Elite'} typePlan="$100.00" options={thirdOptions} />
         </Stack>
       </Box>
       <Footer />
