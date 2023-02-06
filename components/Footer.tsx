@@ -82,7 +82,7 @@ import {
         color={useColorModeValue('gray.700', 'gray.200')}>
         <Container as={Stack} maxW={'6xl'} py={10}>
           <SimpleGrid
-            templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
+            templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr' }}
             spacing={8}>
             <Stack spacing={6}>
               <Box>
@@ -97,7 +97,7 @@ import {
                 © Pips with Paul
                 <br /> All rights reserved
               </Text>
-              <Stack direction={'row'} spacing={6}>
+              <Stack direction={'row'} spacing={3}>
                 <SocialButton label={'Twitter'} href={'#'}>
                   <FaTwitter />
                 </SocialButton>
@@ -122,28 +122,6 @@ import {
               <Link href={'#'}>Terms of Service</Link>
               <Link href={'#'}>Legal</Link>
               <Link href={'#'}>Privacy Policy</Link>
-            </Stack>
-            <Stack align={'flex-start'}>
-              <ListHeader>Stay up to date</ListHeader>
-              <Stack direction={'row'}>
-                <Input
-                  placeholder={'Your email address'}
-                  bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-                  border={0}
-                  _focus={{
-                    bg: 'whiteAlpha.300',
-                  }}
-                />
-                <IconButton
-                  bg={useColorModeValue('green.400', 'green.800')}
-                  color={useColorModeValue('white', 'gray.800')}
-                  _hover={{
-                    bg: 'green.600',
-                  }}
-                  aria-label="Subscribe"
-                  icon={<BiMailSend />}
-                />
-              </Stack>
             </Stack>
           </SimpleGrid>
         </Container>

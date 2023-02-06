@@ -13,9 +13,8 @@ import {
   export default function Newsletter() {
     return (
       <>
-      <h4 style={{marginTop:'3%', textAlign:'center', marginLeft:'10%', marginRight:'10%', lineHeight:'2rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo commodo ultrices. Etiam et tristique dolor. Quisque vitae sollicitudin quam. Nullam porttitor magna ac venenatis 
-        viverra. Cras scelerisque, velit ac fringilla pulvinar, turpis urna scelerisque sem, vitae viverra elit dolor vel dui. Nunc quis quam pharetra ipsum viverra malesuada. Nam viverra sapien 
-        massa, eu suscipit arcu cursus at. Quisque iaculis enim odio, faucibus blandit elit placerat a. Mauris a facilisis dui.</h4>
+      <h1 style={{marginTop:'3%', textAlign:'center', marginLeft:'20%', marginRight:'20%', lineHeight:'2rem'}}>Frequently, Pips with Paul sends out important reminders, tips, discounts, and more.
+      You wouldn't want to miss out on all of that! You can sign up for our newsletter by entering your email below and gain access to all of that.<br></br> <br></br>⭐ Heads up: you must have an active subscription to access this feature ⭐</h1>
       <Flex
         minH={'50vh'}
         align={'center'}
