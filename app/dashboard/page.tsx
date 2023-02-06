@@ -1,5 +1,6 @@
 "use client"
 import { useState } from 'react';
+import logo from '../../public/logo.jpg'
 import {
   Box,
   Heading,
@@ -11,6 +12,7 @@ import {
   HStack,
 } from '@chakra-ui/react';
 import { BsArrowUpRight, BsHeartFill, BsHeart } from 'react-icons/bs';
+import Image from 'next/image';
 
 export default function Dashboard() {
   const [liked, setLiked] = useState(false);
@@ -29,16 +31,10 @@ export default function Dashboard() {
         border={'1px'}
         borderColor="black"
         boxShadow={useColorModeValue('6px 6px 0 green', '6px 6px 0 cyan')}>
-        <Box h={'200px'} borderBottom={'1px'} borderColor="black">
-          <Img
-            src={
-              'https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
-            }
-            roundedTop={'sm'}
-            objectFit="cover"
-            h="full"
-            w="full"
-            alt={'Blog Image'}
+        <Box  borderBottom={'1px'} borderColor="black">
+          <Image
+            src={logo}
+            alt='logo'
           />
         </Box>
         <Box p={4}>
@@ -90,16 +86,10 @@ export default function Dashboard() {
         border={'1px'}
         borderColor="black"
         boxShadow={useColorModeValue('6px 6px 0 green', '6px 6px 0 cyan')}>
-        <Box h={'200px'} borderBottom={'1px'} borderColor="black">
-          <Img
-            src={
-              'https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
-            }
-            roundedTop={'sm'}
-            objectFit="cover"
-            h="full"
-            w="full"
-            alt={'Blog Image'}
+        <Box  borderBottom={'1px'} borderColor="black">
+          <Image
+            src={logo}
+            alt='logo'
           />
         </Box>
         <Box p={4}>
@@ -151,16 +141,10 @@ export default function Dashboard() {
         border={'1px'}
         borderColor="black"
         boxShadow={useColorModeValue('6px 6px 0 green', '6px 6px 0 cyan')}>
-        <Box h={'200px'} borderBottom={'1px'} borderColor="black">
-          <Img
-            src={
-              'https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
-            }
-            roundedTop={'sm'}
-            objectFit="cover"
-            h="full"
-            w="full"
-            alt={'Blog Image'}
+        <Box  borderBottom={'1px'} borderColor="black">
+          <Image
+            src={logo}
+            alt='logo'
           />
         </Box>
         <Box p={4}>
