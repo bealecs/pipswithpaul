@@ -18,7 +18,7 @@ export default function Dashboard() {
   const [liked, setLiked] = useState(false);
 
   return (
-   <div style={{display:'flex', justifyContent:'space-evenly'}}>
+   <div style={{display:'flex', justifyContent:'space-evenly', flexWrap:'wrap'}}>
    <div>
     <Center py={6}>
       <Box
