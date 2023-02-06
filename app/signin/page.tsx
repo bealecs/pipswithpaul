@@ -61,7 +61,7 @@ import Footer from '@/components/Footer';
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Sign in to your account</Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
-              to enjoy all of our cool <Link color={'green.400'}>features</Link> ✌️
+              to enjoy all of our cool <Link onClick={() => router.push('/')} color={'green.400'}>features</Link> ✌️
             </Text>
           </Stack>
           
