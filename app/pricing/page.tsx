@@ -1,5 +1,4 @@
 "use client"
-import Footer from '@/components/Footer';
 import {
     Box,
     Button,
@@ -138,7 +137,6 @@ import Navbar from '../../components/Navbar';
           <PackageTier title={'Lorem Elite'} typePlan="$100.00" options={thirdOptions} />
         </Stack>
       </Box>
-      <Footer />
       </>
     );
   };

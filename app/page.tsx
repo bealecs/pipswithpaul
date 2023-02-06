@@ -2,7 +2,6 @@
 import { Inter } from '@next/font/google';
 import Testimonials from '@/components/Testimonials';
 import HeroSection from '@/components/HeroSection';
-import Footer from '@/components/Footer';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from '@/firebase/firebase';
 import { useEffect } from 'react';
@@ -22,7 +21,6 @@ export default function Home() {
     <HeroSection />
     {/* <Features /> */}
     <Testimonials />
-    <Footer />
    </>
   )
 }

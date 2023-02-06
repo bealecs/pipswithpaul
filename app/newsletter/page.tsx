@@ -9,9 +9,7 @@ import {
     Icon,
     useColorModeValue,
     createIcon,
-  } from '@chakra-ui/react';
-  import Footer from '@/components/Footer';
-  
+  } from '@chakra-ui/react';  
   export default function Newsletter() {
     return (
       <>
@@ -68,7 +66,6 @@ import {
           </Stack>
         </Stack>
       </Flex>
-      <Footer />
       </>
     );
   }

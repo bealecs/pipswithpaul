@@ -274,11 +274,12 @@ import Image from 'next/image';
     },
     {
       label: 'Courses',
+      href: '/dashboard',
       children: [
         {
           label: 'My Courses',
           subLabel: 'Jump into your course catalog',
-          href: '#',
+          href: '/dashboard',
         },
         {
           label: 'Recent Releases',

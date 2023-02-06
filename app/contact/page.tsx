@@ -1,5 +1,4 @@
 "use client"
-import Footer from '@/components/Footer';
 import {
     Box,
     Button,
@@ -37,7 +36,7 @@ import {
   
   export default function Contact() {
     const { hasCopied, onCopy } = useClipboard('pipswithpaul@gmail.com');
-  
+  // Use nocodeAPI to configure a feedback sheet like I did with my other apps to enable the contact sheet
     return (
       <>
       <Flex
@@ -175,7 +174,6 @@ import {
           </Box>
         </Box>
       </Flex>
-      <Footer />
       </>
     );
   }
