@@ -54,12 +54,11 @@ import {
               p={2}
               alignSelf={'flex-start'}
               rounded={'md'}>
-              Our Story
+              What we do
             </Text>
-            <Heading>Mentorships in Forex Trading</Heading>
+            <Heading>Experts in Forex Trading</Heading>
             <Text color={'gray.500'} fontSize={'lg'}>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore
+              We strive to give our audience exactly what they need, while cutting out the rest. Check out our different subscriptions to see how we can help you!
             </Text>
             <Stack
               spacing={4}
@@ -73,12 +72,12 @@ import {
                   <Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />
                 }
                 iconBg={useColorModeValue('yellow.100', 'yellow.900')}
-                text={'Business Planning'}
+                text={'Daily Signals'}
               />
               <Feature
                 icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
                 iconBg={useColorModeValue('green.100', 'green.900')}
-                text={'Financial Planning'}
+                text={'Video Training / 1-on-1 Mentoring'}
               />
               <Feature
                 icon={

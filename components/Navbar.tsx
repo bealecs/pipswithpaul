@@ -282,7 +282,7 @@ import Image from 'next/image';
         },
         {
           label: 'Recent Releases',
-          subLabel: 'Featuring our latest course materials for our paid members',
+          subLabel: 'Featuring our latest course materials',
           href: '#',
         },
       ],
