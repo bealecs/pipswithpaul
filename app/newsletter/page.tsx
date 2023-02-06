@@ -15,8 +15,11 @@ import {
   export default function Newsletter() {
     return (
       <>
+      <h4 style={{marginTop:'3%', textAlign:'center', marginLeft:'10%', marginRight:'10%', lineHeight:'2rem'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo commodo ultrices. Etiam et tristique dolor. Quisque vitae sollicitudin quam. Nullam porttitor magna ac venenatis 
+        viverra. Cras scelerisque, velit ac fringilla pulvinar, turpis urna scelerisque sem, vitae viverra elit dolor vel dui. Nunc quis quam pharetra ipsum viverra malesuada. Nam viverra sapien 
+        massa, eu suscipit arcu cursus at. Quisque iaculis enim odio, faucibus blandit elit placerat a. Mauris a facilisis dui.</h4>
       <Flex
-        minH={'100vh'}
+        minH={'50vh'}
         align={'center'}
         justify={'center'}
         py={12}
