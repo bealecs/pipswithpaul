@@ -1,3 +1,4 @@
+import { auth } from '@/firebase/firebase';
 import {
     Stack,
     Flex,
@@ -6,9 +7,13 @@ import {
     VStack,
     useBreakpointValue,
   } from '@chakra-ui/react';
+import { useRouter } from 'next/navigation';
   
   export default function HeroSection() {
+    const router = useRouter();
+    const user = auth.currentUser;
     return (
+      <>
       <Flex
         w={'full'}
         h={'85vh'}
@@ -27,28 +32,31 @@ import {
               color={'white'}
               fontWeight={700}
               lineHeight={1.2}
+              textShadow={'#05fd2b 1px 0 15px'}
               fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
-              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
-              eiusmod tempor
+              Daily signals, video course work, mentoring, and more - find out how we can help you
             </Text>
             <Stack direction={'row'}>
-              <Button
+              {!user && <Button
                 bg={'green.400'}
                 rounded={'full'}
                 color={'white'}
+                onClick={() => router.push("/signup")}
                 _hover={{ bg: 'green.500' }}>
-                Show me more
-              </Button>
-              <Button
+                Sign up
+              </Button>}
+              {!user && <Button
                 bg={'whiteAlpha.300'}
                 rounded={'full'}
                 color={'white'}
+                onClick={() => router.push("/signin")}
                 _hover={{ bg: 'whiteAlpha.500' }}>
-                Show me more
-              </Button>
+                Sign in
+              </Button>}
             </Stack>
           </Stack>
         </VStack>
       </Flex>
+      </>
     );
   }
