@@ -1,5 +1,4 @@
 import firebase from "firebase/compat/app";
-import { initializeApp, getApps } from "firebase/app";
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -11,10 +10,7 @@ const firebaseConfig = {
     appId: process.env.NEXT_PUBLIC_APP_ID,
 }
 
-if (!getApps().length) {
-    initializeApp(firebaseConfig);
-}
-
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+export const db = firebaseApp.firestore;
 export const auth = getAuth();
 
-export default firebase;

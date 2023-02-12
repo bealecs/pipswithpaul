@@ -19,11 +19,23 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Footer from '@/components/Footer';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+import { createCheckoutSession } from '@/stripe/createCheckoutSession';
   
   const provider = new GoogleAuthProvider();
   const loginWithGoogle = async () => {
     try {
-      const result = await signInWithPopup(auth, provider);
+      const Router = useRouter();
+      const user = await signInWithPopup(auth, provider);
+      Router.push("/");
+      firebase.firestore().collection("users").doc(user.user.uid).set({
+        uid: user.user.uid,
+        email: user.user.email,
+        name: user.user.displayName,
+        provider: user.user.providerData[0].providerId,
+        photoUrl: user.user.photoURL,
+      });
     } catch (error) {
       alert(error);
     }
@@ -105,6 +117,10 @@ import Footer from '@/components/Footer';
               <Button 
                 onClick={loginWithGoogle}>
                 Sign in with Google
+              </Button>
+              <Button
+              onClick={() => {createCheckoutSession(user.uid)}}>
+                Upgrade to VIP package
               </Button>
             </Stack>
           </Box>

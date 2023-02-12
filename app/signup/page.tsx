@@ -20,15 +20,20 @@ import {
   import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
   import { auth } from '@/firebase/firebase';
 import { useRouter } from 'next/navigation';
-
+import { updateProfile } from 'firebase/auth';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 
   
   export default function SignUpPage() {
     const [showPassword, setShowPassword] = useState(false);
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const name = firstName + " " + lastName;
     const Router = useRouter();
-    
+
     const registerCredentials = async () => {
       try {
         const user = await createUserWithEmailAndPassword(
@@ -36,8 +41,14 @@ import { useRouter } from 'next/navigation';
           registerEmail,
           registerPassword
         )
-        console.log(user);
-        Router.push("/")
+        Router.push("/");
+        firebase.firestore().collection("users").doc(user.user.uid).set({
+          uid: user.user.uid,
+          email: user.user.email,
+          name: name,
+          provider: user.user.providerData[0].providerId,
+          photoUrl: user.user.photoURL,
+        });
       } catch (error) {
         console.log(error);
         alert(error)
@@ -69,13 +80,17 @@ import { useRouter } from 'next/navigation';
                 <Box>
                   <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
-                    <Input type="text" required minLength={2}/>
+                    <Input type="text" required minLength={2} onChange={(e) => { 
+                      setFirstName(e.target.value)
+                    }}/>
                   </FormControl>
                 </Box>
                 <Box>
                   <FormControl id="lastName">
                     <FormLabel>Last Name</FormLabel>
-                    <Input type="text" required minLength={2}/>
+                    <Input type="text" required minLength={2} onChange={(e) => { 
+                      setLastName(e.target.value)
+                    }}/>
                   </FormControl>
                 </Box>
               </HStack>
@@ -126,3 +141,4 @@ import { useRouter } from 'next/navigation';
       </Flex>
     );
   }
+  
