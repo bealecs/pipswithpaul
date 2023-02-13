@@ -25,13 +25,13 @@ import {
 import { useAuthState } from 'react-firebase-hooks/auth';
 import logo from '../public/logo.jpg';
 import Image from 'next/image';
+import Head from '@/app/head';
 
   
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
     const [user] = useAuthState(auth);
 
-  
     return (
       <Box>
         <Flex

@@ -26,9 +26,7 @@ import { createCheckoutSession } from '@/stripe/createCheckoutSession';
   const provider = new GoogleAuthProvider();
   const loginWithGoogle = async () => {
     try {
-      const Router = useRouter();
       const user = await signInWithPopup(auth, provider);
-      Router.push("/");
       firebase.firestore().collection("users").doc(user.user.uid).set({
         uid: user.user.uid,
         email: user.user.email,
@@ -54,7 +52,6 @@ import { createCheckoutSession } from '@/stripe/createCheckoutSession';
           login,
           password
         );
-        console.log(user);
         router.push("/");
       } catch (error) {
         window.location.reload();
@@ -117,10 +114,6 @@ import { createCheckoutSession } from '@/stripe/createCheckoutSession';
               <Button 
                 onClick={loginWithGoogle}>
                 Sign in with Google
-              </Button>
-              <Button
-              onClick={() => {createCheckoutSession(user.uid)}}>
-                Upgrade to VIP package
               </Button>
             </Stack>
           </Box>

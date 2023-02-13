@@ -4,7 +4,7 @@ import getStripe from './initializeStripe';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore'
 
-export async function createCheckoutSession(uid: string) {
+export async function createCheckoutSession3(uid: string) {
     const firestore = firebase.firestore();
     
     //Create a new checkout session in the subcollection inside this users document
@@ -13,7 +13,7 @@ export async function createCheckoutSession(uid: string) {
         .doc(uid)
         .collection("checkout_sessions")
         .add({
-            price: "price_1ManxzGB7Jr1yIFoCdyhjLa9", //This is the API ID for the VIP member package. Just using this one right now for testing purposes
+            price: "price_1Manv8GB7Jr1yIFoCiJYpipe", 
             success_url: window.location.origin,
             cancel_url: window.location.origin,
         });
