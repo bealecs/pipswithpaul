@@ -1,6 +1,5 @@
 import firebase from 'firebase/compat/app';
 import initializeStripe from "./initializeStripe";
-import getStripe from './initializeStripe';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore'
 
