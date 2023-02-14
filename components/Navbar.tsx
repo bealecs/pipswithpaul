@@ -25,12 +25,13 @@ import {
 import { useAuthState } from 'react-firebase-hooks/auth';
 import logo from '../public/logo.jpg';
 import Image from 'next/image';
-import Head from '@/app/head';
-
+import usePremiumStatus from '@/stripe/usePremiumStatus';
+import firebase from 'firebase/compat';
   
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
     const [user] = useAuthState(auth);
+    const userIsPremium = usePremiumStatus(auth);
 
     return (
       <Box>
@@ -80,6 +81,12 @@ import Head from '@/app/head';
               href='/signin'>
                 Sign in
             </Button>}
+            {userIsPremium && 
+              <Button
+                as={'a'}
+                href='/courses'>
+                Courses
+              </Button>}
             {user && <Button
               onClick={() => auth.signOut()}
               as={'a'}
@@ -271,22 +278,6 @@ import Head from '@/app/head';
     {
       label: 'Plans & Pricing',
       href: '/pricing',
-    },
-    {
-      label: 'Courses',
-      href: '/dashboard',
-      children: [
-        {
-          label: 'My Courses',
-          subLabel: 'Jump into your course catalog',
-          href: '/dashboard',
-        },
-        {
-          label: 'Recent Releases',
-          subLabel: 'Featuring our latest course materials',
-          href: '#',
-        },
-      ],
     },
     {
       label: 'About',
