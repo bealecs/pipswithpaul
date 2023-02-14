@@ -13,8 +13,8 @@ import {
   export default function Newsletter() {
     return (
       <>
-      <h1 style={{marginTop:'3%', textAlign:'center', marginLeft:'20%', marginRight:'20%', lineHeight:'2rem'}}>Frequently, Pips with Paul sends out important reminders, tips, discounts, and more.
-      You wouldn't want to miss out on all of that! You can sign up for our newsletter by entering your email below and gain access to all of that.<br></br> <br></br>⭐ Heads up: you must have an active subscription to access this feature ⭐</h1>
+      <h1 style={{marginTop:'3%', textAlign:'center', marginLeft:'20%', marginRight:'20%', lineHeight:'2rem'}}>⭐Frequently, Pips with Paul sends out important reminders, tips, discounts, and more.
+      You wouldn't want to miss out on all of that! You can sign up for our newsletter by entering your email below and gain access to all of that.⭐</h1>
       <Flex
         minH={'50vh'}
         align={'center'}
