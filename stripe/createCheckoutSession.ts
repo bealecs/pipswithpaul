@@ -16,7 +16,7 @@ export async function createCheckoutSession(uid: string) {
             success_url: window.location.origin,
             cancel_url: window.location.origin,
         });
-
+        
         //Wait for the Checkout Session to get attached by the extension
         CheckoutSessionRef.onSnapshot(async (snap) => {
             const { sessionId } = snap.data();

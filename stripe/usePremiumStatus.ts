@@ -11,6 +11,7 @@ export default function usePremiumStatus(user: Auth) {
             const checkPremiumStatus = async function() {
                 setPremiumStatus(await isUserPremium());
             };
+            checkPremiumStatus();
         }
     }, [user]);
 
