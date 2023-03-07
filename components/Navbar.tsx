@@ -95,7 +95,6 @@ import firebase from 'firebase/compat/app';
               href='/signin'>
               Sign out
             </Button>}
-            <button onClick={() => console.log(userIsPremium)}>Click me for info</button>
             {!user && <Button
                 as={"a"}
               display={{ base: 'none', md: 'inline-flex' }}
