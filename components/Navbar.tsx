@@ -26,7 +26,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import logo from '../public/logo.jpg';
 import Image from 'next/image';
 import usePremiumStatus from '@/stripe/usePremiumStatus';
-import firebase from 'firebase/compat';
+import 'firebase/compat/firestore';
+import firebase from 'firebase/compat/app';
   
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
@@ -81,6 +82,7 @@ import firebase from 'firebase/compat';
               href='/signin'>
                 Sign in
             </Button>}
+            
             {userIsPremium && 
               <Button
                 as={'a'}
@@ -93,6 +95,7 @@ import firebase from 'firebase/compat';
               href='/signin'>
               Sign out
             </Button>}
+            <button onClick={() => console.log(userIsPremium)}>Click me for info</button>
             {!user && <Button
                 as={"a"}
               display={{ base: 'none', md: 'inline-flex' }}
@@ -121,11 +124,11 @@ import firebase from 'firebase/compat';
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
-    const [user] = useAuthState(auth);
+    const [user, userLoading] = useAuthState(auth);
   
     return (
       <Stack direction={'row'} spacing={4}>
-        {user && <h1 style={{color: 'green'}}>Hi, {user.email}</h1>}
+        {user && <h1 style={{color: 'green'}}>Hi, {user.email}</h1> || userLoading && <h1></h1>}
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
