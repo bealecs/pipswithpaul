@@ -21,6 +21,7 @@ import {
     return (
       <svg
         height={32}
+        width="auto"
         viewBox="0 0 120 28"
         xmlns="http://www.w3.org/2000/svg"
         {...props}>

@@ -103,7 +103,7 @@ export default function Testimonials() {
             <TestimonialContent>
               <TestimonialHeading>Great Teachings</TestimonialHeading>
               <TestimonialText>
-              I am so pleased with these teachings. Pips with Paul is both attractive and highly adaptable. Without Pips with Paul, we would have gone bankrupt by now. Thank you for creating this product!
+              I am so pleased with these teachings. Pips with Paul makes learning forex both easy and affordable. Without Pips with Paul, we would have gone bankrupt by now. Thank you for creating this product!
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
