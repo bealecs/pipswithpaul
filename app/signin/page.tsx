@@ -25,6 +25,7 @@ import { createCheckoutSession } from '@/stripe/createCheckoutSession';
   
   const provider = new GoogleAuthProvider();
   const loginWithGoogle = async () => {
+
     try {
       const user = await signInWithPopup(auth, provider);
       firebase.firestore().collection("users").doc(user.user.uid).set({
