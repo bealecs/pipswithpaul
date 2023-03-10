@@ -213,7 +213,9 @@ export default function ThreeTierPricing() {
             </List>
             <Box w="80%" pt={7}>
               {user && (
-              <Button w="full" colorScheme="green" variant="outline" onClick={() => {createCheckoutSession(user.uid)}}>
+              <Button w="full" colorScheme="green" variant="outline" onClick={() => {
+                alert("Please wait a few seconds while you are redirected...")
+                createCheckoutSession(user.uid)}}>
                 Start Subscription
               </Button> ) } {!user && (
               <Button w="full" colorScheme="green" variant="outline" onClick={() => Router.push("/signup")}>
