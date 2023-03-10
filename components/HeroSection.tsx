@@ -8,10 +8,11 @@ import {
     useBreakpointValue,
   } from '@chakra-ui/react';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
   
   export default function HeroSection() {
     const router = useRouter();
-    const user = auth.currentUser;
+    const [user] = useState(auth);
     return (
       <>
       <Flex
