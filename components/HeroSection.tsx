@@ -34,7 +34,7 @@ import { useState } from 'react';
               fontWeight={700}
               lineHeight={1.2}
               textShadow={'#05fd2b 1px 0 7px'}
-              fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
+              >
               Daily signals, video course work, mentoring, and more - find out how we can help you
             </Text>}
             {user && <Text
@@ -42,7 +42,7 @@ import { useState } from 'react';
               fontWeight={700}
               lineHeight={1.2}
               textShadow={'#05fd2b 1px 0 7px'}
-              fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
+              >
               Welcome back {user.currentUser.displayName}
             </Text>}
             <Stack direction={'row'}>
