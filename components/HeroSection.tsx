@@ -33,11 +33,9 @@ import { useState } from 'react';
               color={'white'}
               fontWeight={700}
               lineHeight={1.2}
-              textShadow={'#05fd2b 1px 0 7px'}
-              fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
+              textShadow={'#05fd2b 1px 0 7px'}>
               Daily signals, video course work, mentoring, and more - find out how we can help you
             </Text>}
-            
             <Stack direction={'row'}>
               {!user && <Button
                 bg={'green.400'}
