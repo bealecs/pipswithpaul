@@ -23,22 +23,6 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import { createCheckoutSession } from '@/stripe/createCheckoutSession';
   
-  const provider = new GoogleAuthProvider();
-  const loginWithGoogle = async () => {
-
-    try {
-      const user = await signInWithPopup(auth, provider);
-      firebase.firestore().collection("users").doc(user.user.uid).set({
-        uid: user.user.uid,
-        email: user.user.email,
-        name: user.user.displayName,
-        provider: user.user.providerData[0].providerId,
-        photoUrl: user.user.photoURL,
-      });
-    } catch (error) {
-      alert(error);
-    }
-  }
   export default function SignInPage() {
     
     const [login, setLogin] = useState("")
@@ -112,10 +96,9 @@ import { createCheckoutSession } from '@/stripe/createCheckoutSession';
                   Sign in
                 </Button>
               </Stack>
-              <Button 
-                onClick={loginWithGoogle}>
-                Sign in with Google
-              </Button>
+              <Text align={'center'}>
+                  Don't have an account? <Link href='/signup' color={'green.400'}>Sign up</Link>
+                </Text>
             </Stack>
           </Box>
           
