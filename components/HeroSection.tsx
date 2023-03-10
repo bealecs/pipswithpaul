@@ -9,10 +9,13 @@ import {
   } from '@chakra-ui/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import usePremiumStatus from '@/stripe/usePremiumStatus';
   
   export default function HeroSection() {
     const router = useRouter();
     const [user] = useState(auth);
+    const userIsPremium = usePremiumStatus(auth);
+
     return (
       <>
       <Flex
@@ -29,13 +32,30 @@ import { useState } from 'react';
           px={useBreakpointValue({ base: 4, md: 8 })}
           bgGradient={'linear(to-r, blackAlpha.600, transparent)'}>
           <Stack maxW={'2xl'} align={'flex-start'} spacing={6}>
-            {!user && <Text
+           <Text
               color={'white'}
               fontWeight={700}
               lineHeight={1.2}
+              fontSize={"5rem"}
               textShadow={'#05fd2b 1px 0 7px'}>
-              Daily signals, video course work, mentoring, and more - find out how we can help you
-            </Text>}
+              Pips With Paul
+            </Text>
+            <Text
+              color={'white'}
+              fontWeight={700}
+              lineHeight={1.2}
+              fontSize={"2.5rem"}
+              textShadow={'#05fd2b 1px 0 7px'}>
+              Daily signals, video course work, mentoring, and more
+            </Text>
+            <Text
+              color={'white'}
+              fontWeight={700}
+              lineHeight={1.2}
+              fontSize={"1.5rem"}
+              textShadow={'#05fd2b 1px 0 7px'}>
+              Find out how we can help you
+            </Text>
             <Stack direction={'row'}>
               {!user && <Button
                 bg={'green.400'}
@@ -45,6 +65,7 @@ import { useState } from 'react';
                 _hover={{ bg: 'green.500' }}>
                 Sign up
               </Button>}
+              
               {!user && <Button
                 bg={'whiteAlpha.300'}
                 rounded={'full'}
