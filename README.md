@@ -1,10 +1,12 @@
-# Pips With Paul
+# Pips With Paul 📈💰
 
-Create your account, sign in, and start your subscription to begin your learning journey with Paul. Paul is a friend of mine that hosts mentorship lessons on trading in the forex market. 
+### Create your account, sign in, and start your subscription to begin your learning journey with Paul. Paul is a friend of mine that hosts mentorship lessons on trading in the forex market. 
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#### This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-I also incorporated [Stripe](https://stripe.com/) to incorporate the subscription management as well as [Firebase](https://firebase.google.com/) for user authentication and data storage
+#### I also incorporated [Stripe](https://stripe.com/) to incorporate the subscription management as well as [Firebase](https://firebase.google.com/) for user authentication and data storage
+
+#### The biggest challenges I faced with this project was learning Firebase. I had not yet been accustomed to backend management at all, and setting up a database with user authentication and management was truly a challenge. Firebase's documentation is a very valuable tool, as it helped me through most of my issues.
 
 Check out the rest of the repo, and follow the instructions below to get it started locally on your machine
 
